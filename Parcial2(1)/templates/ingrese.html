@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+      .img {
+        vertical-align: middle;
+        width: 145px;
+        height: 145px;
+        border-radius: 50%;
+      }
+      .container{
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10vh !important;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        /ransform: translate(-50%, -50%);
+      }
+
+      .row{
+        min-height: 150px;
+      }
+
+      #tabla {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #tabla td, #tabla th {
+        border: 1px solid #AB9C2E;
+        padding: 8px;
+      }
+
+      #tabla th:nth-child(even){background-color: #AB9C2E;}
+
+      #tabla tr:hover {background-color: #AB9C2E;}
+
+      #tabla th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: #AB9C2E;
+      }
+    </style>
+</head>
+
+
+<body style="padding: 4vh;">
+  <div class="shadow-lg container">
+    <h2 style="color:#AB9C2E">
+  <img src="{{url_for('static', filename='RodrigoReyes.png')}}" align="middle" >
+    </h2>
+    <body >
+      <p style="color:#AB9C2E">Rodrigo Reyes 20200090</p>
+    </body>
+    <form>
+      <table id="tabla" >
+        <thead>
+          <tr>
+            <th>
+            {% for k,v in result.items() %}
+                <li class="list-group-item">
+                    <b>{{k}} :</b> {{v}}
+                </li>
+            {% endfor %}
+            </th>
+          </tr>
+        </thead>
+      </form>
+      </table>
+      <br>
+        <label class="sr-only">Name</label>
+        <input name="text" type="text" class="form-control text-center" placeholder="Insert a String">
+        <br>
+        <div class="center">
+        <button type="submit" class="btn btn-primary">Handle</button>
+        </div>
+    </div> 
+</body>
+</html>
